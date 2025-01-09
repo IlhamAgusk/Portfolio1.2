@@ -31,19 +31,19 @@
                         <ul class="block lg:flex">
                             <li class="group">
                                 <a href="#home"
-                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Beranda</a>
+                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
                             </li>
                             <li class="group">
                                 <a href="#about"
-                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Tentang Saya</a>
+                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang Saya</a>
                             </li>
                             <li class="group">
                                 <a href="#portfolio"
-                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Portfolio</a>
+                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
                             </li>
                             <li class="group">
                                 <a href="#contact"
-                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
                             </li>
                         </ul>
                     </nav>
@@ -54,9 +54,10 @@
     <!--Header End-->
 
     <!--Hero Section Start-->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
+                <!-- Teks dan Tombol -->
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, Saya <span
                             class="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Ilham Agus Kurniawan</span></h1>
@@ -64,19 +65,54 @@
                         <span class="text-dark">Programmer</span>
                     </h2>
                     <a href="#contact"
-                        class="text-base font-semibold text-white bg-primary py-3 px-4 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Hubungi
-                        Saya</a>
+                        class="text-base font-semibold text-white bg-primary py-3 px-4 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">
+                        Hubungi Saya
+                    </a>
                 </div>
 
+                <!-- Carousel -->
                 <div class="w-full self-end px-4 lg:w-1/2">
-                    <div class="relative mt-10 lg:mt-9 lg:right-0"></div>
-                    <img src="dist/img/IlhamAgusKurniawan.jpg" alt="Foto Profil IlhamAgusKurniawan"
-                        class="max-w-full mx-auto rounded-lg">
+                    <!-- Background Shape -->
+                    <div class="absolute inset-0 justify-center items-center ml-96 mt-32 pl-56 hidden lg:flex">
+                        <img src="dist/img/BIfix5.png" class="absolute animate-spin-slow" alt="Background Image" />
+                    </div>
+                    <div class="relative w-full overflow-hidden mt-10 lg:w-1/2 lg:mt-9 lg:right-0 lg:ml-36">
+                        <!-- Slides -->
+                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out img">
+                            <img src="dist/img/IlhamAgus.jpg" class="h-[400px] object-cover lg:h-[500px] rounded-lg relative z-10" alt="Gambar 1">
+                            <img src="dist/img/gambar2.jpg" class="h-[400px] object-cover lg:h-[500px] rounded-lg relative z-10" alt="Gambar 1">
+                            <img src="dist/img/gambar3.jpg" class="h-[400px] object-cover lg:h-[500px] rounded-lg relative z-10" alt="Gambar 1">
+                            <img src="dist/img/gambar5.jpg" class="h-[400px] object-cover lg:h-[500px] rounded-lg relative z-10" alt="Gambar 1">
+                            <img src="dist/img/gambar6.jpg" class="h-[400px] object-cover lg:h-[500px] rounded-lg relative z-10" alt="Gambar 1">
+                        </div>
+
+                        <!-- Previous Button -->
+                        <button id="prevBtn"
+                            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 text-primary p-2 rounded-full">
+                            <span>&lt;</span>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button id="nextBtn"
+                            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 text-primary p-2 rounded-full">
+                            <span>&gt;</span>
+                        </button>
+
+                        <!-- Indicators -->
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <button class="w-2 h-2 bg-primary rounded-full indicator" data-slide="0"></button>
+                            <button class="w-2 h-2 bg-white rounded-full indicator" data-slide="1"></button>
+                            <button class="w-2 h-2 bg-white rounded-full indicator" data-slide="2"></button>
+                            <button class="w-2 h-2 bg-white rounded-full indicator" data-slide="3"></button>
+                            <button class="w-2 h-2 bg-white rounded-full indicator" data-slide="4"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!--Hero Section End-->
+
 
     <!--About Section Start-->
     <section id="about" class="pt-12 lg:pt-36 pb-32">
@@ -130,7 +166,7 @@
 
                         <!--Github-->
                         <a href="https://github.com/IlhamAgusk" target="_blank"
-                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-350 hover:border-primary hover:bg-primary hover:text-white">
+                            class="w-7 h-7 mr-3 rounded-full flex justify-center items-center border border-slate-350 hover:border-primary hover:bg-primary hover:text-white">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <title>GitHub</title>
                                 <path
@@ -140,7 +176,7 @@
 
                         <!--Discord-->
                         <a href="http://discordapp.com/users/1070530256689184799" target="_blank"
-                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-350 hover:border-primary hover:bg-primary hover:text-white">
+                            class="w-7 h-7 mr-3 rounded-full flex justify-center items-center border border-slate-350 hover:border-primary hover:bg-primary hover:text-white">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <title>Discord</title>
                                 <path
@@ -175,7 +211,7 @@
                     <div class="group">
                         <a href="project1.html">
                             <div class="rounded-lg overflow-hidden shadow-md">
-                                <img src="dist/img/LoginProject1.png" alt="Project 1"
+                                <img src="/dist/img/ProjectPendataanAsrama.jpg" alt="Project 1"
                                     class="w-full transition-transform duration-300 group-hover:scale-110">
                             </div>
                             <h3 class="text-lg font-semibold text-dark mt-4 group-hover:text-primary">Sistem Pendataan
@@ -205,10 +241,13 @@
                                 <img src="dist/img/ProjectPhising.png" alt="Project 3"
                                     class="w-full transition-transform duration-300 group-hover:scale-110">
                             </div>
-                            <h3 class="text-lg font-semibold text-dark mt-4 group-hover:text-primary">Phising (Kali Linux,
+                            <h3 class="text-lg font-semibold text-dark mt-4 group-hover:text-primary">Phising (Kali
+                                Linux,
                                 Blackeye)</h3>
-                            <p class="text-sm text-secondary">Project sederhana membuat website phising menggunakan Blackeye
-                                di Kali Linux untuk mendapatkan username, email, dan password dari log yang tersimpan.</p>
+                            <p class="text-sm text-secondary">Project sederhana membuat website phising menggunakan
+                                Blackeye
+                                di Kali Linux untuk mendapatkan username, email, dan password dari log yang tersimpan.
+                            </p>
                         </a>
                     </div>
                     <!-- Project Item 3 -->
@@ -244,7 +283,8 @@
                     <p class="font-medium text-md text-secondary md:text-lg">
                         Hubungi saya melalui Whatsapp pribadi saya 👇.
                     </p>
-                    <a href="http://wa.me/6282287355788" target="_blank" class="rounded-lg overflow-hidden shadow-md img-wrapper group">
+                    <a href="http://wa.me/6282287355788" target="_blank"
+                        class="rounded-lg overflow-hidden shadow-md img-wrapper group">
                         <img src="dist/img/WhatsappBackground.png" alt="Whatsapp"
                             class="rounded-lg img-contact transition-transform duration-300 group-hover:scale-110 mt-4 lg:mt-8">
                     </a>
@@ -368,7 +408,8 @@
 
     <!-- Back to Top Start -->
     <a href="#home"
-        class="hidden fixed bottom-4 right-4 z-[9999] h-10 w-10 rounded-full bg-primary p-3 transition-transform transform hover:scale-110 focus:scale-110 md:h-14 md:w-14 md:p-4" id="up">
+        class="hidden fixed bottom-4 right-4 z-[9999] h-10 w-10 rounded-full bg-primary p-3 transition-transform transform hover:scale-110 focus:scale-110 md:h-14 md:w-14 md:p-4"
+        id="up">
         <svg enable-background="new 0 0 32 32" id="Слой_1" version="1.1" viewBox="0 0 32 32" xml:space="preserve"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <path clip-rule="evenodd"
