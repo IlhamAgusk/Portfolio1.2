@@ -39,3 +39,61 @@ hamburger.addEventListener('click', function () {
 });
 
 document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+const carousel = document.getElementById("carousel");
+const slides = carousel.children;
+const indicators = document.querySelectorAll(".indicator");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentIndex = 0;
+let autoSlideInterval;
+
+// Fungsi untuk memperbarui carousel
+const updateCarousel = (index) => {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+  indicators.forEach((indicator, i) => {
+    indicator.classList.toggle("bg-primary", i === index);
+    indicator.classList.toggle("bg-white", i !== index);
+  });
+};
+
+// Tombol Previous
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel(currentIndex);
+  resetAutoSlide();
+});
+
+// Tombol Next
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel(currentIndex);
+  resetAutoSlide();
+});
+
+// Indikator
+indicators.forEach((indicator) => {
+  indicator.addEventListener("click", () => {
+    currentIndex = parseInt(indicator.getAttribute("data-slide"));
+    updateCarousel(currentIndex);
+    resetAutoSlide();
+  });
+});
+
+// Fungsi untuk memulai auto-slide
+const startAutoSlide = () => {
+  autoSlideInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel(currentIndex);
+  }, 4000); // Geser setiap 3 detik
+};
+
+// Fungsi untuk mereset auto-slide
+const resetAutoSlide = () => {
+  clearInterval(autoSlideInterval);
+  startAutoSlide();
+};
+
+// Memulai auto-slide saat halaman dimuat
+startAutoSlide();
